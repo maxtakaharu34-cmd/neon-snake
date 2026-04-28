@@ -94,12 +94,12 @@ export default function Index() {
         ctx.fillStyle = '#0ff';
         ctx.shadowColor = '#0ff'; ctx.shadowBlur = 20;
         ctx.font = 'bold 48px monospace';
-        ctx.fillText('NEON SNAKE', W / 2, H / 2 - 50);
+        ctx.fillText('ネオンスネーク', W / 2, H / 2 - 50);
         ctx.shadowBlur = 10;
         ctx.fillStyle = '#f0f'; ctx.font = '20px monospace';
-        ctx.fillText(`High Score: ${hi}`, W / 2, H / 2);
+        ctx.fillText(`ハイスコア: ${hi}`, W / 2, H / 2);
         ctx.fillStyle = '#fff'; ctx.font = '16px monospace';
-        ctx.fillText('Press ENTER to start', W / 2, H / 2 + 40);
+        ctx.fillText('ENTERでスタート', W / 2, H / 2 + 40);
         ctx.fillStyle = '#666'; ctx.font = '12px monospace';
         ctx.fillText('Arrow Keys / WASD to move', W / 2, H / 2 + 70);
         ctx.shadowBlur = 0; ctx.textAlign = 'left';
@@ -112,12 +112,12 @@ export default function Index() {
         ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0, 0, W, H);
         ctx.textAlign = 'center';
         ctx.fillStyle = '#f06'; ctx.shadowColor = '#f06'; ctx.shadowBlur = 20;
-        ctx.font = 'bold 40px monospace'; ctx.fillText('GAME OVER', W / 2, H / 2 - 40);
+        ctx.font = 'bold 40px monospace'; ctx.fillText('ゲームオーバー', W / 2, H / 2 - 40);
         ctx.shadowBlur = 10;
         ctx.fillStyle = '#ff0'; ctx.font = 'bold 24px monospace';
-        ctx.fillText(`Score: ${scoreRef.current}`, W / 2, H / 2 + 5);
+        ctx.fillText(`スコア: ${scoreRef.current}`, W / 2, H / 2 + 5);
         ctx.fillStyle = '#fff'; ctx.font = '16px monospace';
-        ctx.fillText('Press ENTER to retry', W / 2, H / 2 + 45);
+        ctx.fillText('ENTERで再挑戦', W / 2, H / 2 + 45);
         ctx.shadowBlur = 0; ctx.textAlign = 'left';
         return;
       }
@@ -260,7 +260,7 @@ export default function Index() {
     function drawHUD(ctx: CanvasRenderingContext2D) {
       ctx.fillStyle = '#0ff'; ctx.shadowColor = '#0ff'; ctx.shadowBlur = 6;
       ctx.font = 'bold 16px monospace';
-      ctx.fillText(`Score: ${scoreRef.current}`, 10, 24);
+      ctx.fillText(`スコア: ${scoreRef.current}`, 10, 24);
       ctx.fillStyle = '#f0f';
       ctx.fillText(`Hi: ${Math.max(scoreRef.current, hi)}`, W - 140, 24);
       // Active effects
@@ -282,12 +282,12 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center p-4">
       <h1 className="text-3xl md:text-4xl font-black mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-400 to-yellow-400" style={{ textShadow: '0 0 20px #0ff' }}>
-        🐍 Neon Snake
+        🐍 ネオンスネーク
       </h1>
       <canvas ref={canvasRef} className="rounded-xl border-2 border-cyan-800" style={{ maxWidth: '100%', imageRendering: 'pixelated' }} />
       <div className="flex gap-3 mt-3">
-        {screen === 'menu' && <button onClick={startGame} className="px-6 py-2 bg-gradient-to-r from-cyan-700 to-fuchsia-700 text-white rounded-xl font-bold hover:scale-105 transition-transform">Start</button>}
-        {screen === 'over' && <button onClick={startGame} className="px-6 py-2 bg-gradient-to-r from-cyan-700 to-fuchsia-700 text-white rounded-xl font-bold hover:scale-105 transition-transform">Retry</button>}
+        {screen === 'menu' && <button onClick={startGame} className="px-6 py-2 bg-gradient-to-r from-cyan-700 to-fuchsia-700 text-white rounded-xl font-bold hover:scale-105 transition-transform">スタート</button>}
+        {screen === 'over' && <button onClick={startGame} className="px-6 py-2 bg-gradient-to-r from-cyan-700 to-fuchsia-700 text-white rounded-xl font-bold hover:scale-105 transition-transform">リトライ</button>}
         <button onClick={() => setSound(s => !s)} className="px-4 py-2 bg-gray-800 text-white rounded-xl text-sm">{sound ? '🔊' : '🔇'}</button>
       </div>
       {screen === 'play' && (
